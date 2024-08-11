@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pink Baked Goods</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        /* Reset and general styles */
+        body, h1, h2, p {
+            margin: 0;
+            padding: 0;
+            font-family: 'Poppins', sans-serif;
+            line-height: 1.6;
+        }
+
+        body {
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+            background-color: #121212;
+            color: #fff;
+        }
+
+        /* Hero Section */
+        #hero {
+            background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('https://via.placeholder.com/1200x600');
+            background-size: cover;
+            background-position: center;
+            text-align: center;
+            padding: 100px 20px;
+            color: #ff69b4;
+        }
+
+        .hero-content h1 {
+            font-size: 3.5em;
+            margin-bottom: 20px;
+            text-shadow: 2px 2px #ff69b4;
+            font-family: 'Orbitron', sans-serif;
+        }
+
+        .hero-content p {
+            font-size: 1.5em;
+            margin-bottom: 20px;
+            color: #ff99cc;
+        }
+
+        .btn {
+            padding: 12px 24px;
+            background-color: #ff69b4;
+            color: white;
+            text-decoration: none;
+            border-radius: 50px;
+            transition: background-color 0.3s, transform 0.3s;
+            font-weight: bold;
+            box-shadow: 0px 0px 10px #ff69b4;
+        }
+
+        .btn:hover {
+            background-color: #ff1493;
+            transform: scale(1.1);
+        }
+
+        /* Menu Section */
+        #menu {
+            padding: 50px 20px;
+            text-align: center;
+            background-color: #222;
+            border-top: 5px solid #ff69b4;
+            border-bottom: 5px solid #ff69b4;
+        }
+
+        #menu h2 {
+            margin-bottom: 20px;
+            font-size: 2.5em;
+            font-family: 'Orbitron', sans-serif;
+            color: #ff69b4;
+        }
+
+        .menu-items {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        .menu-card {
+            background-color: #333;
+            border-radius: 20px;
+            overflow: hidden;
+            margin: 15px;
+            box-shadow: 0 0 15px rgba(255, 105, 180, 0.3);
+            width: 300px;
+            transition: transform 0.3s;
+        }
+
+        .menu-card:hover {
+            transform: scale(1.05);
+        }
+
+        .menu-card img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+
+        .card-content {
+            padding: 15px;
+            color: #fff;
+        }
+
+        .card-content h3 {
+            font-size: 1.8em;
+            margin-bottom: 10px;
+            color: #ff99cc;
+        }
+
+        .card-content p {
+            font-size: 1.4em;
+        }
+
+        .sale .badge {
+            background-color: #ff69b4;
+            color: white;
+            padding: 5px 10px;
+            border-radius: 10px;
+            font-size: 0.9em;
+        }
+
+        /* Contact Section */
+        #contact {
+            padding: 50px 20px;
+            text-align: center;
+            background-color: #121212;
+        }
+
+        #contact h2 {
+            margin-bottom: 20px;
+            font-size: 2.5em;
+            font-family: 'Orbitron', sans-serif;
+            color: #ff69b4;
+        }
+
+        .form-group {
+            margin-bottom: 15px;
+            text-align: left;
+            display: flex;
+            align-items: center;
+            color: #fff;
+        }
+
+        .form-group label {
+            flex: 0 0 150px;
+            font-size: 1.2em;
+            color: #ff99cc;
+        }
+
+        .form-group input,
+        .form-group textarea {
+            width: 100%;
+            padding: 12px;
+            font-size: 1em;
+            border: 2px solid #ff69b4;
+            border-radius: 10px;
+            background-color: #222;
+            color: #fff;
+        }
+
+        textarea {
+            height: 100px;
+        }
+
+        button[type="submit"] {
+            padding: 12px 24px;
+            background-color: #ff69b4;
+            color: white;
+            border: none;
+            border-radius: 50px;
+            cursor: pointer;
+            transition: background-color 0.3s, transform 0.3s;
+            font-weight: bold;
+            box-shadow: 0px 0px 10px #ff69b4;
+        }
+
+        button[type="submit"]:hover {
+            background-color: #ff1493;
+            transform: scale(1.1);
+        }
+
+        /* Footer Section */
+        footer {
+            background-color: #333;
+            color: #ff99cc;
+            text-align: center;
+            padding: 20px;
+            margin-top: auto;
+            border-top: 5px solid #ff69b4;
+        }
+
+        footer p {
+            margin: 5px 0;
+        }
+
+        /* Mobile Responsiveness */
+        @media (max-width: 768px) {
+            .menu-items {
+                flex-direction: column;
+            }
+
+            .form-group {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+
+            .form-group label {
+                margin-bottom: 5px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Hero Section -->
+    <section id="hero">
+        <div class="hero-content">
+            <h1>Delicious Baked Goods</h1>
+            <p>Freshly baked every day just for you</p>
+            <a href="#menu" class="btn">View Menu</a>
+        </div>
+    </section>
+
+    <!-- Menu Section -->
+    <section id="menu">
+        <h2>Our Menu</h2>
+        <div class="menu-items">
+            <div class="menu-card">
+                <img src="https://via.placeholder.com/300x200" alt="Bread">
+                <div class="card-content">
+                    <h3>Classic Bread</h3>
+                    <p>$5.00</p>
+                </div>
+            </div>
+            <div class="menu-card sale">
+                <img src="https://via.placeholder.com/300x200" alt="Cupcake">
+                <div class="card-content">
+                    <h3>Cupcake</h3>
+                    <p>$3.00 <span class="badge">On Sale!</span></p>
+                </div>
+            </div>
+            <div class="menu-card">
+                <img src="https://via.placeholder.com/300x200" alt="Cookies">
+                <div class="card-content">
+                    <h3>Cookies</h3>
+                    <p>$4.50</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact">
+        <h2>Contact Us</h2>
+        <form>
+            <div class="form-group">
+                <label for="name"><i class="fas fa-user"></i> Name</label>
+                <input type="text" id="name" name="name" required>
+            </div>
+            <div class="form-group">
+                <label for="email"><i class="fas fa-envelope"></i> Email</label>
+                <input type="email" id="email" name="email" required>
+            </div>
+            <div class="form-group">
+                <label for="phone"><i class="fas fa-phone"></i> Phone</label>
+                <input type="tel" id="phone" name="phone">
+            </div>
+            <div class="form-group">
+                <label for="message"><i class="fas fa-comment"></i> Message</label>
+                <textarea id="message" name="message" required></textarea>
+            </div>
+            <button type="submit" class="btn">Submit</button>
+        </form>
+    </section>
+
+    <!-- Footer Section -->
+    <footer>
+        <p><i class="fas fa-clock"></i> Open Mon-Sat 8 AM - 6 PM</p>
+        <p><i class="fas fa-map-marker-alt"></i> 123 Baked St, Sweet Town</p>
+        <p><i class="fas fa-phone"></i> (123) 456-7890</p>
+    </footer>
+
+    <script>
+        // Smooth Scrolling
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+    </script>
+</body>
+</html>
